@@ -20,10 +20,11 @@ Things you may want to cover:
 * How to run the test suite
   - bundle
   - rake db:drop db:create db:migrate db:seed
+  - rails s
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
 * Account Admin
-  u: admin@vinova.sg
+  - u: admin@vinova.sg

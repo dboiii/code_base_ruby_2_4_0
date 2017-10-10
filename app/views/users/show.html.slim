@@ -1,0 +1,25 @@
+.container-fluid
+  .page-title
+    .page-header.page-header-with-buttons
+      h2.pull-left
+        span
+          | Show User
+      .pull-right
+        .btn-group
+          = link_to "Back to List Users", users_path, class: "btn btn-success button"
+          = link_to 'Edit', edit_user_path(@user), class: "btn btn-info button"
+  .row
+    .col-sm-12
+      .card
+        .card-body
+          dl
+            dt Username
+            dd.show-content = @user.username.titleize if @user.username
+            dt Email:
+            dd.show-content = @user.email
+            dt Role:
+            dd.show-content = @user.role.titleize
+            dt Created at:
+            dd.show-content = @user.created_at.strftime('%d-%b-%Y %H:%M')
+            dt Updated at:
+            dd.show-content = @user.updated_at.strftime('%d-%b-%Y %H:%M')

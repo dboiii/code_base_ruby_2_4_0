@@ -1,0 +1,100 @@
+.page-header.page-header-with-buttons {
+  border: none;
+  margin-top: 0px;
+  h2.pull-left {
+    margin-top: 12px;
+  }
+}
+.panel.panel-info.fresh-color {
+  border: 1px solid #d3d3d3 !important;
+}
+a.color-link {
+  color: #22A7F0;
+}
+a.btn.btn-success.button, a.btn.btn-danger.button, a.btn.btn-info.button, a.btn.btn-warning.button {
+  margin-left: 5px;
+}
+.card{
+  .btn.btn-success{
+    width: 75px;
+  }
+}
+.active_class_color {
+	color: #ee1c25 !important;
+}
+
+.remove_fields.dynamic {
+  .delete-multi-img {
+    display: none;
+  }
+}
+.remove_fields.existing {
+  padding-left: 50px;
+}
+
+.scale-pic{
+  height: 120px;
+  width: 120px;
+}
+
+.delete-img{
+  height: 20px;
+  width: 20px;
+}
+
+.nested-fields{
+  height: 125px;
+  width: 125px;
+  margin: 15px 0 15px 0;
+}
+
+.align-delete-button{
+  width: 120px;
+  text-align: center;
+}
+
+#preview-img{
+  width: 125px;
+}
+.card{
+  overflow:visible !important;
+}
+.select2.select2-container{
+  width: 100% !important;
+}
+.select2-selection.select2-selection--single{
+  border-radius:0 !important;
+}
+#hidden_tag {
+  display: none;
+}
+tbody {
+  tr.report {
+    background-color: bisque !important;
+  }  
+}
+table.dataTable {
+  border-collapse: collapse;
+}
+table.dataTable.no-footer {
+  border-bottom: 1px solid #1A0;
+}
+.container-fluid {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@media (max-width: 767px){
+  .form_search{
+    width: 80% !important;
+    margin-left: 20px!important;
+  }
+  .table-bordered {
+    margin-left: 20px;
+  }
+}
+@media(width: 768px){
+  .dropdown.profile{
+    display: block!important;
+  }
+}

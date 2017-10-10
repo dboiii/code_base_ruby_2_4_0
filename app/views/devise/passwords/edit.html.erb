@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="login-box">
+    <div>
+      <div class="login-form row">
+        <div class="col-sm-12 text-center login-header">
+          <i class="login-logo fa fa-child fa-5x"></i>
+          <h4 class="login-title">C3A NSA</h4>
+          <h3>Change your password</h3>
+
+        </div>
+        <div class="col-sm-12">
+          <div class="login-body">
+            <div class="progress hidden" id="login-progress">
+              <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                Changing Password...
+              </div>
+            </div>
+            <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+              <%= f.hidden_field :reset_password_token %>
+              <div class="control">
+                <%= f.input :password, label:'New password', input_html: {class: 'form-control', autocomplete: 'off'} %>
+                <%= f.input :password_confirmation, label: 'Confirm new password', input_html: {class: 'form-control', autocomplete: 'off'} %>
+              </div>
+              <div class="login-button text-center">
+                <%= f.button :submit, "Change my Password", class: 'button right' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+table#setDataTable.table.table-bordered.table-hover.table-striped style="margin-bottom:0; margin-top: 10px;"
+  thead
+    tr
+      th Id
+      th Username
+      th Email
+      th Role
+      th Created at
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.id
+        td = user.username.titleize if user.username
+        td = user.email
+        td = user.role.titleize
+        td = user.created_at.strftime('%d-%b-%Y %H:%M')
+        td
+          .pull-left
+            .btn-group
+              = link_to 'Show', user_path(user), class: "btn btn-success button"
+              = link_to 'Edit', edit_user_path(user), class: "btn btn-success button"
+              = link_to 'Remove', user_path(user), data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-danger button"
+br
+.dataTables_length
+  = paginate @users

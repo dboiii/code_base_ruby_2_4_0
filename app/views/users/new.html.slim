@@ -1,0 +1,12 @@
+.page-header.page-header-with-buttons
+  h1.pull-left
+    span
+      | New User
+  .pull-right
+    .btn-group
+      = link_to "Back to List Users", users_path, class: "btn btn-success"
+br
+br
+br
+
+= render 'form'

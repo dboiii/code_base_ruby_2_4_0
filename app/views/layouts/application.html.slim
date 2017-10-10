@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : 'Name App'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Name App'}"
+    = stylesheet_link_tag "application", :media => 'all'
+    = javascript_include_tag 'application'
+    / = favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
+  body.flat-blue class="#{'login-page' if devise_controller?}"
+    / = render 'shared/loader'
+    - if user_signed_in?
+      .app-container.expanded
+        .row.content-container
+          = render 'shared/header'
+          = render 'shared/sidebar'
+          .container-fluid
+            .side-body
+              = render 'layouts/messages'
+              = yield
+    - else
+      = render 'layouts/messages'
+      = yield

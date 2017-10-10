@@ -1,0 +1,11 @@
+= simple_form_for(@user) do |f|
+  .form-inputs
+    = f.input :username
+    = f.input :email
+    = f.input :password
+    = f.input :password_confirmation
+    - unless current_user.id == f.object.id
+      = f.input :role, collection: User.roles.keys.map{|r| [r.titleize, r]}, input_html: { class: "select2" }
+
+  .form-actions
+    = f.button :submit

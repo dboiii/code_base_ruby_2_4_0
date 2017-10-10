@@ -1,0 +1,27 @@
+nav#navbar.navbar.navbar-default.navbar-fixed-top.navbar-top
+  .container-fluid
+    .navbar-header
+      button.navbar-expand-toggle type="button" 
+        i.fa.fa-bars.icon
+      button.navbar-right-expand-toggle.pull-right.visible-xs type="button"
+        i.fa.fa-th.icon
+    ul.nav.navbar-nav.navbar-right
+      button.navbar-right-expand-toggle.pull-right.visible-xs type="button" 
+        i.fa.fa-times.icon
+      li.dropdown.profile
+        a.dropdown-toggle aria-expanded="false" data-toggle="dropdown" href="#" role="button" 
+          i.fa.fa-cog.fa-2x
+          span.caret
+        ul.dropdown-menu.animated.fadeInDown
+          li.profile-img
+            = image_tag('admin.jpg', class: 'profile-img')
+          li
+            .profile-info
+              h4.username Administrator
+              - if current_user.admin?
+                .btn-group.margin-bottom-2x role="group" 
+                  = link_to "Edit Profile", edit_user_path(current_user), class: 'btn btn-default'
+              .btn-group.margin-bottom-2x role="group" 
+                = link_to destroy_user_session_path, method: :delete, class: 'btn btn-default'
+                  i.fa.fa-sign-out
+                  |  Logout

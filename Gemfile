@@ -24,6 +24,9 @@ gem 'dotenv-rails',       '~> 2.2.1'
 gem "select2-rails",      '~> 4.0.3'
 gem 'devise',             '~> 4.3.0'
 
+gem 'jquery-datatables-rails',  '~> 3.4.0'
+gem 'ajax-datatables-rails',    '~> 0.4.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

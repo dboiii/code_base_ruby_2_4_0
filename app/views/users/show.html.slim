@@ -13,6 +13,8 @@
       .card
         .card-body
           dl
+            dt Id
+            dd.show-content = @user.id
             dt Username
             dd.show-content = @user.username.titleize if @user.username
             dt Email:

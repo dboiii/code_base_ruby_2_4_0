@@ -14,9 +14,14 @@ a.color-link {
 a.btn.btn-success.button, a.btn.btn-danger.button, a.btn.btn-info.button, a.btn.btn-warning.button {
   margin-left: 5px;
 }
-.card{
-  .btn.btn-success{
-    width: 75px;
+.card {
+  overflow:visible !important;
+  .pull-right {
+    float: none !important;
+    text-align: left;
+  }
+  .btn.btn-success, .btn.btn-danger{
+    width: 90px;
   }
 }
 .active_class_color {
@@ -56,28 +61,24 @@ a.btn.btn-success.button, a.btn.btn-danger.button, a.btn.btn-info.button, a.btn.
 #preview-img{
   width: 125px;
 }
-.card{
-  overflow:visible !important;
+.select2.select2-container, .select2-container .select2-selection--single {
+  height: 34px !important;
+}
+.select2-selection__rendered {
+  line-height: 32px !important;
+}
+.select2-selection__arrow {
+  height: 32px !important;
 }
 .select2.select2-container{
   width: 100% !important;
 }
 .select2-selection.select2-selection--single{
+  border-color: #ccc !important;
   border-radius:0 !important;
 }
 #hidden_tag {
   display: none;
-}
-tbody {
-  tr.report {
-    background-color: bisque !important;
-  }  
-}
-table.dataTable {
-  border-collapse: collapse;
-}
-table.dataTable.no-footer {
-  border-bottom: 1px solid #1A0;
 }
 .container-fluid {
   padding-left: 5px;

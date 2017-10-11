@@ -1,4 +1,4 @@
-table#setDataTable.table.table-bordered.table-hover.table-striped style="margin-bottom:0; margin-top: 10px;"
+table#setDataTable.display.table.table-bordered.table-hover style="margin-bottom:0; margin-top: 10px; width: 100%;" data-source="#{users_path(format: :json)}"
   thead
     tr
       th Id
@@ -6,22 +6,34 @@ table#setDataTable.table.table-bordered.table-hover.table-striped style="margin-
       th Email
       th Role
       th Created at
-      th
+      th 
 
   tbody
-    - @users.each do |user|
-      tr
-        td = user.id
-        td = user.username.titleize if user.username
-        td = user.email
-        td = user.role.titleize
-        td = user.created_at.strftime('%d-%b-%Y %H:%M')
-        td
-          .pull-left
-            .btn-group
-              = link_to 'Show', user_path(user), class: "btn btn-success button"
-              = link_to 'Edit', edit_user_path(user), class: "btn btn-success button"
-              = link_to 'Remove', user_path(user), data: { confirm: 'Are you sure?' }, method: :delete, class: "btn btn-danger button"
-br
-.dataTables_length
-  = paginate @users
+
+javascript:
+  jQuery(document).ready(function() {
+    $('#setDataTable').dataTable({
+      "processing": true,
+      "serverSide": true,
+      "ajax": $('#setDataTable').data('source'),
+      "pagingType": "full_numbers",
+      "responsive": true,
+      "order": [[ 0, "desc" ]],
+      "dom": '<"top"f>rt<"bottom"ip><"clear">',
+      "columns": [
+        {"data": "id"},
+        {"data": "username"},
+        {"data": "email"},
+        {"data": "role"},
+        {"data": "created_at"},
+        {"data": "action"}
+      ],
+      "oLanguage": { "sSearch": "Search: " },
+      "columnDefs": [ 
+        {
+          "targets": 5,
+          "orderable": false
+        } 
+      ]
+    });
+  });

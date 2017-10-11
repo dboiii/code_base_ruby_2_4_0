@@ -3,11 +3,13 @@
 @import "font-awesome";
 
 @import 'general';
+@import 'custom_datatable';
+@import 'format_rule';
 @import "libs/animate.min";
 @import "libs/bootstrap-switch.min";
 @import "libs/flat-blue";
-@import "libs/jquery.dataTables.min";
 @import "libs/loader_page";
 @import "libs/style";
 
 @import 'select2';
+@import 'dataTables/jquery.dataTables';

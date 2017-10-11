@@ -2,12 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user_count = User.member
-    @users = @user_count.search(params[:user_name], params[:user_email])
-                        .order(created_at: :desc).page(params[:page]).per(10)
     respond_to do |format|
-      format.js { @users.reload }
       format.html
+      format.json { render json: UserDatatable.new(view_context) }
     end
   end
 

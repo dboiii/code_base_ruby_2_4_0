@@ -1,0 +1,39 @@
+#setDataTable_wrapper {
+  #setDataTable_length, #setDataTable_filter {
+    text-align: left;
+    width: 100%;
+    label {
+      width: 100%;
+      input {
+        width: 20%;
+      }
+    }
+  }
+  .dataTable {
+    border-color: #afa9bd;
+    thead {
+      tr {
+        th {
+          border-left: 1px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-left: 1px;
+          border-bottom: 1px;
+        }
+      }
+      tr.report {
+        background-color: bisque !important;
+      }
+    }
+  }
+  li.paginate_button {
+    padding: 0px !important;
+    &:hover {
+      border: 0;
+    }
+  }
+}

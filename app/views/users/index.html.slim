@@ -1,48 +1,13 @@
 .container-fluid
-  .page-title
-    .page-header.page-header-with-buttons
-      h2.pull-left
-        span
-          | All users (#{@user_count.count})
-      .pull-right
-        .btn-group
-          = link_to "New User", new_user_path, class: "btn btn-success"
-
   .row
     .col-sm-12
-      .responsive-table
-        .scrollable-area.table-responsive
-          .row style="margin-top:30px; margin-bottom:30px;"
-            .col-sm-3
-              = form_tag users_path, :method => 'get', id: "user_user_name", style: "height:33px;" do
-                = text_field_tag :user_name, params[:user_name], placeholder: "Search user name...", style: "width: 100%" , autocomplete: "off", class: "form-control form_search"
-            .col-sm-3
-              = form_tag users_path, :method => 'get', id: "user_user_email", style: "height:33px;" do
-                = text_field_tag :user_email, params[:user_email], placeholder: "Search user email...", style: "width: 100%", autocomplete: "off", class: "form-control form_search"
-
-          #users-list
-            = render "users_list"
-
-javascript:
-  var delay = (function(){
-    var timer = 0;
-    return function(callback, ms){
-      clearTimeout (timer);
-      timer = setTimeout(callback, ms);
-    };
-  })();
-  $(function () {
-    $('#user_user_name input').keyup(function(event) {
-      delay(function(){
-        $.get($('#user_user_name').attr('action'), $('#user_user_name').serialize(), null, 'script');
-        return false;
-      }, 1000);
-    });
-
-    $('#user_user_email input').keyup(function(event) {
-      delay(function(){
-        $.get($('#user_user_email').attr('action'), $('#user_user_email').serialize(), null, 'script');
-        return false;
-      }, 1000);
-    });
-  });
+      .card
+        .panel.panel-default.margin_left_25.margin_right_25 style="text-align: center; background-color: #DFEFE7;"
+          h2 Panel Users
+          h2
+            = link_to "New User", new_user_path, class: "btn btn-warning"
+        .card-body
+          .responsive-table
+            .scrollable-area.table-responsive
+              #users-list
+                = render "users_list"

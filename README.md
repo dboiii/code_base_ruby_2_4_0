@@ -19,6 +19,7 @@ Things you may want to cover:
 * How to run the test suite
   - bundle
   - rake db:drop db:create db:migrate db:seed
+  - rails generate datatable ModelName (if you have a new model using datatable)
   - rails s
   
 * Gem includes
@@ -38,6 +39,9 @@ Things you may want to cover:
   - gem 'dotenv-rails',       '~> 2.2.1'
   - gem "select2-rails",      '~> 4.0.3'
   - gem 'devise',             '~> 4.3.0'
+  
+  - gem 'jquery-datatables-rails',  '~> 3.4.0'
+  - gem 'ajax-datatables-rails',    '~> 0.4.0'
 
 * Services (job queues, cache servers, search engines, etc.)
 

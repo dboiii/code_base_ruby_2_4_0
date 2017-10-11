@@ -20,6 +20,8 @@ html
             .side-body
               = render 'layouts/messages'
               = yield
+              = render 'shared/footer'
     - else
       = render 'layouts/messages'
       = yield
+      = render 'shared/footer'

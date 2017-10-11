@@ -25,7 +25,7 @@ class UserDatatable < AjaxDatatablesRails::Base
                         <div class='btn-group'>
                           <a class='btn btn-success button active' href='/users_admin/#{record.id}'>Show</a>
                           <a class='btn btn-success button active' href='/users_admin/#{record.id}/edit'>Edit</a>
-                          <a data-confirm='Are you sure?' class='btn btn-danger button active' rel='nofollow' data-method='delete' href='/users_admin/#{record.id}'>Remove</a>
+                          <a data-confirm='Are you sure to remove item id #{record.id} ?' class='btn btn-danger button active' rel='nofollow' data-method='delete' href='/users_admin/#{record.id}'>Remove</a>
                         </div>
                       </div> ".html_safe
       }
